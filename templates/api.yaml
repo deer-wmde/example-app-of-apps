@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: wbaas-ui
+  name: wbaas-api
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -11,6 +11,6 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-    path: charts/ui
+    path: charts/api
     repoURL: https://github.com/wbstack/charts
     targetRevision: HEAD
